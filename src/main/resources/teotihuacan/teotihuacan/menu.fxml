@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.MenuController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menu.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="201.0" layoutY="98.0" mnemonicParsing="false" onAction="#on2PlayersClick" opacity="0.0" prefHeight="25.0" prefWidth="25.0" />
+      <Button layoutX="574.0" layoutY="98.0" mnemonicParsing="false" onAction="#on4PlayersClick" opacity="0.0" prefHeight="25.0" prefWidth="25.0" />
+      <Button layoutX="388.0" layoutY="98.0" mnemonicParsing="false" onAction="#on3PlayersClick" opacity="0.0" prefHeight="25.0" prefWidth="25.0" />
+   </children>
+</Pane>

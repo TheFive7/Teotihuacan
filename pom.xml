@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>teotihuacan.teotihuacan/teotihuacan.teotihuacan.HelloApplication</mainClass>
+                            <mainClass>teotihuacan.teotihuacan/teotihuacan.teotihuacan.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
