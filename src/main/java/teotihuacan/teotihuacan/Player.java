@@ -10,27 +10,32 @@ public class Player {
 
     private int numero;
     private String color;
+    private List<Ressource> ressources = new ArrayList<>();
 
     public Player(int numero, String color){
-        this.numero = numero;
-        this.color = color;
+        setNumero(numero);
+        setColor(color);
     }
 
+    /**
+     * Créé les joueurs en leur assignant une couleur et un numero.
+     */
     public static void createPlayer(){
         players.clear();
         for (int i = 0; i < nbPlayer;i++) {
-            if (i == nbPlayer - 4) players.add(new Player(0,"RED"));
-            if (i == nbPlayer - 3) players.add(new Player(0,"BLUE"));
-            if (i == nbPlayer - 2) players.add(new Player(0,"GREEN"));
-            if (i == nbPlayer - 1) players.add(new Player(0,"YELLOW"));
+            if (i == nbPlayer - 4) players.add(new Player(0,"YELLOW"));
+            if (i == nbPlayer - 3) players.add(new Player(0,"GREEN"));
+            if (i == nbPlayer - 2) players.add(new Player(0,"BLUE"));
+            if (i == nbPlayer - 1) players.add(new Player(0,"RED"));
         }
         createOrder();
-        print();
+        printPlayer();
     }
 
     /**
      * Assigner le numero du joueur en fonction de son placement et du premier joueur choisi.
      */
+    // TODO : OPTIMISER LA FONCTION
     public static void createOrder(){
         Random random = new Random();
         int numFirstPlayer = random.nextInt(nbPlayer);
@@ -53,7 +58,7 @@ public class Player {
             } else if (numFirstPlayer == 1){
                 players.get(numFirstPlayer).setNumero(1);
                 players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(numFirstPlayer - 1).setNumero(3);
+                players.get(0).setNumero(3);
             } else {
                 players.get(numFirstPlayer).setNumero(1);
                 players.get(numFirstPlayer - 1).setNumero(3);
@@ -70,11 +75,11 @@ public class Player {
                 players.get(numFirstPlayer).setNumero(1);
                 players.get(numFirstPlayer + 1).setNumero(2);
                 players.get(numFirstPlayer + 2).setNumero(3);
-                players.get(numFirstPlayer - 1).setNumero(4);
+                players.get(0).setNumero(4);
             } else if (numFirstPlayer == 2){
                 players.get(numFirstPlayer).setNumero(1);
                 players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(numFirstPlayer - 2).setNumero(3);
+                players.get(0).setNumero(3);
                 players.get(numFirstPlayer - 1).setNumero(4);
             } else {
                 players.get(numFirstPlayer).setNumero(1);
@@ -85,10 +90,74 @@ public class Player {
         }
     }
 
-    public static void print(){
+    /**
+     * Attribue les ressources de départ à chaque joueur en fonction de son numero.
+     */
+    public static void attribuerRessourcesDepart(){
         for (Player player : players){
-            System.out.println("Player " + player.getColor() + " : " + player.getNumero());
+            switch (player.getNumero()){
+                case 1:
+                    player.ajouterRessource("cacao",5);
+                    player.ajouterRessource("bois",1);
+                    player.ajouterRessource("pierre",2);
+                    player.ajouterRessource("or",4);
+                    break;
+                case 2:
+                    player.ajouterRessource("cacao",5);
+                    player.ajouterRessource("bois",4);
+                    player.ajouterRessource("pierre",1);
+                    break;
+                case 3:
+                    player.ajouterRessource("cacao",4);
+                    player.ajouterRessource("bois",3);
+                    player.ajouterRessource("pierre",4);
+                    break;
+                case 4:
+                    player.ajouterRessource("bois",2);
+                    player.ajouterRessource("or",5);
+                    break;
+            }
         }
+    }
+
+    /**
+     * Ajoute un nombre de la ressource voulue.
+     * @param type : Type de la ressource à ajouter.
+     * @param nbRessource : Nombre de ressources à ajouter.
+     */
+    public void ajouterRessource(String type, int nbRessource){
+        switch (type){
+            case "or":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Or());}
+                break;
+            case "pierre":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Pierre());}
+                break;
+            case "bois":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Bois());}
+                break;
+            case "cacao":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
+                break;
+        }
+    }
+
+    public static void printPlayer(){
+        for (Player player : players){
+            player.print();
+        }
+    }
+
+    public void print(){
+        System.out.print(
+                "Player " + getColor() +
+                " : " + getNumero() +
+                " -> Ressources >> "
+        );
+        for (Ressource ressource : ressources){
+            System.out.print(ressource + " ");
+        }
+        System.out.println("");
     }
 
     public int getNumero() {
@@ -105,5 +174,9 @@ public class Player {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public List<Ressource> getRessources() {
+        return ressources;
     }
 }

@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static teotihuacan.teotihuacan.Player.createPlayer;
+import static teotihuacan.teotihuacan.Player.*;
 
 public class Main extends Application {
     @Override
@@ -23,6 +23,15 @@ public class Main extends Application {
         deck.print();
         deck.shuffle();
         deck.print();
+
+        nbPlayer = 4;
+        createPlayer();
+        attribuerRessourcesDepart();
+        System.out.println(players.get(0).getRessources().size());
+        System.out.println(players.get(1).getRessources().size());
+        System.out.println(players.get(2).getRessources().size());
+        System.out.println(players.get(3).getRessources().size());
+        printPlayer();
     }
 
     public static void main(String[] args) {
