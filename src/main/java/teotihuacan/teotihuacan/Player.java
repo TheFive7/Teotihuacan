@@ -40,53 +40,8 @@ public class Player {
         Random random = new Random();
         int numFirstPlayer = random.nextInt(nbPlayer);
 
-        // 2 Joueurs
-        if (nbPlayer == 2){
-            if (numFirstPlayer == 0){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-            } else {
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer - 1).setNumero(2);
-            }
-        // 3 Joueurs
-        } else if (nbPlayer == 3) {
-            if (numFirstPlayer == 0){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(numFirstPlayer + 2).setNumero(3);
-            } else if (numFirstPlayer == 1){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(0).setNumero(3);
-            } else {
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer - 1).setNumero(3);
-                players.get(numFirstPlayer - 2).setNumero(2);
-            }
-        // 4 joueurs
-        } else {
-            if (numFirstPlayer == 0){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(numFirstPlayer + 2).setNumero(3);
-                players.get(numFirstPlayer + 3).setNumero(4);
-            } else if (numFirstPlayer == 1){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(numFirstPlayer + 2).setNumero(3);
-                players.get(0).setNumero(4);
-            } else if (numFirstPlayer == 2){
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer + 1).setNumero(2);
-                players.get(0).setNumero(3);
-                players.get(numFirstPlayer - 1).setNumero(4);
-            } else {
-                players.get(numFirstPlayer).setNumero(1);
-                players.get(numFirstPlayer - 1).setNumero(4);
-                players.get(numFirstPlayer - 2).setNumero(3);
-                players.get(numFirstPlayer - 3).setNumero(2);
-            }
+        for (int i = 0; i < nbPlayer; i++){
+            players.get((numFirstPlayer + i) % nbPlayer).setNumero(i+1);
         }
     }
 
@@ -95,27 +50,27 @@ public class Player {
      */
     public static void attribuerRessourcesDepart(){
         for (Player player : players){
-            switch (player.getNumero()){
-                case 1:
-                    player.ajouterRessource("cacao",5);
-                    player.ajouterRessource("bois",1);
-                    player.ajouterRessource("pierre",2);
-                    player.ajouterRessource("or",4);
-                    break;
-                case 2:
-                    player.ajouterRessource("cacao",5);
-                    player.ajouterRessource("bois",4);
-                    player.ajouterRessource("pierre",1);
-                    break;
-                case 3:
-                    player.ajouterRessource("cacao",4);
-                    player.ajouterRessource("bois",3);
-                    player.ajouterRessource("pierre",4);
-                    break;
-                case 4:
-                    player.ajouterRessource("bois",2);
-                    player.ajouterRessource("or",5);
-                    break;
+            switch (player.getNumero()) {
+                case 1 -> {
+                    player.ajouterRessource("cacao", 5);
+                    player.ajouterRessource("bois", 1);
+                    player.ajouterRessource("pierre", 2);
+                    player.ajouterRessource("or", 4);
+                }
+                case 2 -> {
+                    player.ajouterRessource("cacao", 5);
+                    player.ajouterRessource("bois", 4);
+                    player.ajouterRessource("pierre", 1);
+                }
+                case 3 -> {
+                    player.ajouterRessource("cacao", 4);
+                    player.ajouterRessource("bois", 3);
+                    player.ajouterRessource("pierre", 4);
+                }
+                case 4 -> {
+                    player.ajouterRessource("bois", 2);
+                    player.ajouterRessource("or", 5);
+                }
             }
         }
     }
@@ -157,7 +112,7 @@ public class Player {
         for (Ressource ressource : ressources){
             System.out.print(ressource + " ");
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public int getNumero() {
