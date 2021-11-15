@@ -24,14 +24,6 @@ public class Main extends Application {
         deck.shuffle();
         deck.print();
 
-        nbPlayer = 4;
-        createPlayer();
-        attribuerRessourcesDepart();
-        System.out.println(players.get(0).getRessources().size());
-        System.out.println(players.get(1).getRessources().size());
-        System.out.println(players.get(2).getRessources().size());
-        System.out.println(players.get(3).getRessources().size());
-        printPlayer();
     }
 
     public static void main(String[] args) {

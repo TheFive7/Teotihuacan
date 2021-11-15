@@ -29,7 +29,7 @@ public class Player {
             if (i == nbPlayer - 1) players.add(new Player(0,"RED"));
         }
         createOrder();
-        printPlayer();
+        // printPlayer();
     }
 
     /**
