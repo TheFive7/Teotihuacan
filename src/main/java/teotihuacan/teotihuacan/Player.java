@@ -94,6 +94,15 @@ public class Player {
             case "cacao":
                 for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
                 break;
+            case "pion":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Pion());}
+                break;
+            case "plateau":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Plateau());}
+                break;
+            case "ouvrier":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Ouvrier());}
+                break;
         }
     }
 
