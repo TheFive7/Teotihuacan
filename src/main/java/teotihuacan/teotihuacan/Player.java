@@ -50,6 +50,9 @@ public class Player {
      */
     public static void attribuerRessourcesDepart(){
         for (Player player : players){
+            player.ajouterRessource("pion", 12);
+            player.ajouterRessource("plateau", 1);
+            player.ajouterRessource("ouvrier", 4);
             switch (player.getNumero()) {
                 case 1 -> {
                     player.ajouterRessource("cacao", 5);
