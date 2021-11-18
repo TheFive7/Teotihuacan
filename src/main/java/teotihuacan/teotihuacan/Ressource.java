@@ -42,3 +42,15 @@ class Ouvrier extends Ressource {
         this.force = force;
     }
 }
+
+class Plateau extends Ressource {
+    public Plateau(){
+        type = "plateau";
+    }
+}
+
+class Pion extends Ressource {
+    public Pion(){
+        type = "pion";
+    }
+}
