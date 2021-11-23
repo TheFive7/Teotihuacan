@@ -35,11 +35,9 @@ public class Player {
     /**
      * Assigner le numero du joueur en fonction de son placement et du premier joueur choisi.
      */
-    // TODO : OPTIMISER LA FONCTION
     public static void createOrder(){
         Random random = new Random();
         int numFirstPlayer = random.nextInt(nbPlayer);
-
         for (int i = 0; i < nbPlayer; i++){
             players.get((numFirstPlayer + i) % nbPlayer).setNumero(i+1);
         }
@@ -101,6 +99,7 @@ public class Player {
         for (Player player : players){
             player.print();
         }
+        System.out.println();
     }
 
     public void print(){

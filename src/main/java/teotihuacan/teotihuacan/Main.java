@@ -41,7 +41,7 @@ public class Main extends Application {
         deck.print();
         deck.shuffle();
         deck.print();
-
+        System.out.println();
     }
 
     public static void main(String[] args) {
