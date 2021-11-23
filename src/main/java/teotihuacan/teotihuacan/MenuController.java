@@ -2,7 +2,9 @@ package teotihuacan.teotihuacan;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import static teotihuacan.teotihuacan.Main.*;
 import static teotihuacan.teotihuacan.Player.*;
 
 public class MenuController {
@@ -14,6 +16,7 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
+        primaryStage.setScene(pyramide2J);
     }
 
     @FXML
@@ -23,6 +26,7 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
+        primaryStage.setScene(pyramide3J);
     }
 
     @FXML
@@ -32,5 +36,6 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
+        primaryStage.setScene(pyramide4J);
     }
 }
