@@ -48,6 +48,9 @@ public class Player {
      */
     public static void attribuerRessourcesDepart(){
         for (Player player : players){
+            player.ajouterRessource("pion", 12);
+            player.ajouterRessource("plateau", 1);
+            player.ajouterRessource("ouvrier", 4);
             switch (player.getNumero()) {
                 case 1 -> {
                     player.ajouterRessource("cacao", 5);
@@ -91,6 +94,15 @@ public class Player {
                 break;
             case "cacao":
                 for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
+                break;
+            case "pion":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Pion());}
+                break;
+            case "plateau":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Plateau());}
+                break;
+            case "ouvrier":
+                for (int i = 0; i < nbRessource; i++){getRessources().add(new Ouvrier());}
                 break;
         }
     }
