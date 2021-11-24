@@ -39,7 +39,7 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
-        Stage stage2 = new Stage();
+
         eclipse();
     }
 
@@ -51,7 +51,7 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
-        Stage stage2 = new Stage();
+
         eclipse();
     }
 
@@ -63,7 +63,7 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
-        Stage stage2 = new Stage();
+
         eclipse();
     }
 }
