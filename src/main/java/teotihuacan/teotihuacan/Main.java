@@ -12,8 +12,6 @@ import static teotihuacan.teotihuacan.Player.*;
 public class Main extends Application {
     static Stage primaryStage;
     Scene scene;
-    String s;
-    String sa;
     static Scene pyramide2J;
     static Scene pyramide3J;
     static Scene pyramide4J;
