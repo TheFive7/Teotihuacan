@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static teotihuacan.teotihuacan.Player.*;
-
 public class Main extends Application {
     static Stage primaryStage;
     Scene scene;
