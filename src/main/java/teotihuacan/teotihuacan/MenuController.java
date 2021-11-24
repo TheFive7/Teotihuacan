@@ -14,8 +14,7 @@ import static teotihuacan.teotihuacan.Player.*;
 
 public class MenuController {
 
-    public void Eclipse(Stage stage) {
-
+    public void eclipse() {
         Stage stage1 = new Stage();
         int jEclipse = 12;
         Pane PEclipse = new Pane();
@@ -28,24 +27,20 @@ public class MenuController {
         stage1.setTitle("Eclipse");
         stage1.setScene(Eclipse);
         stage1.show();
-
     }
 
 
 
     @FXML
     protected void on2PlayersClick() {
-
-
         System.out.println("2 joueurs");
         nbPlayer = 2;
+
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
         Stage stage2 = new Stage();
-        Eclipse(stage2);
-
-
+        eclipse();
     }
 
     @FXML
@@ -57,8 +52,7 @@ public class MenuController {
         attribuerRessourcesDepart();
         printPlayer();
         Stage stage2 = new Stage();
-        Eclipse(stage2);
-
+        eclipse();
     }
 
     @FXML
@@ -70,7 +64,6 @@ public class MenuController {
         attribuerRessourcesDepart();
         printPlayer();
         Stage stage2 = new Stage();
-        Eclipse(stage2);
-
+        eclipse();
     }
 }
