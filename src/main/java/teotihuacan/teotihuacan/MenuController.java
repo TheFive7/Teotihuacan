@@ -6,6 +6,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 
+import static teotihuacan.teotihuacan.Main.gameView;
+import static teotihuacan.teotihuacan.Main.primaryStage;
 import static teotihuacan.teotihuacan.Player.*;
 
 public class MenuController {
@@ -25,34 +27,8 @@ public class MenuController {
         stage1.show();
     }
 
-
-
     @FXML
-    protected void on2PlayersClick() {
-        System.out.println("2 joueurs");
-        nbPlayer = 2;
-
-        createPlayer();
-        attribuerRessourcesDepart();
-        printPlayer();
-
-        eclipse();
-    }
-
-    @FXML
-    protected void on3PlayersClick() {
-        System.out.println("3 joueurs");
-        nbPlayer = 3;
-
-        createPlayer();
-        attribuerRessourcesDepart();
-        printPlayer();
-
-        eclipse();
-    }
-
-    @FXML
-    protected void on4PlayersClick() {
+    protected void play() {
         System.out.println("4 joueurs");
         nbPlayer = 4;
 
@@ -60,6 +36,6 @@ public class MenuController {
         attribuerRessourcesDepart();
         printPlayer();
 
-        eclipse();
+        primaryStage.setScene(gameView);
     }
 }

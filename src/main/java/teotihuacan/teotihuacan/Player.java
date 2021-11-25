@@ -7,6 +7,7 @@ import java.util.Random;
 public class Player {
     public static List<Player> players = new ArrayList<>();
     static int nbPlayer;
+    static Player currentPlayer;
 
     private int numero;
     private String color;
@@ -15,6 +16,32 @@ public class Player {
     public Player(int numero, String color){
         setNumero(numero);
         setColor(color);
+    }
+
+    /**
+     * Renvoie le joueur correspondant au numéro cherché.
+     * @param nbPlayer : Numéro du joueur à chercher.
+     * @return : Le joueur recherché.
+     */
+    public static Player searchPlayerByNumber(int nbPlayer){
+        Player p = null;
+        for (Player player : players){
+            if (player.getNumero() == nbPlayer) p = player;
+        }
+        return p;
+    }
+
+    /**
+     * Compte le nombre de ressources du joueur.
+     * @param type : Type de la ressource à compter.
+     * @return : Le nombre de ressources.
+     */
+    public int countRessource(String type){
+        int compteur = 0;
+        for (Ressource r : ressources){
+            if (r.type.equals(type)) compteur++;
+        }
+        return compteur;
     }
 
     /**
@@ -29,6 +56,7 @@ public class Player {
             if (i == nbPlayer - 1) players.add(new Player(0,"RED"));
         }
         createOrder();
+        currentPlayer = players.get(0);
     }
 
     /**
