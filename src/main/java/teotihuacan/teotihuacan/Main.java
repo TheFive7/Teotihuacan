@@ -7,11 +7,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static teotihuacan.teotihuacan.Player.*;
-
 public class Main extends Application {
     static Stage primaryStage;
-    Scene scene;
+    static Scene gameView;
     static Scene pyramide2J;
     static Scene pyramide3J;
     static Scene pyramide4J;
@@ -21,7 +19,10 @@ public class Main extends Application {
         primaryStage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800, 800);
+        Scene menu = new Scene(fxmlLoader.load(), 800, 800);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("gameView.fxml"));
+        gameView = new Scene(fxmlLoader1.load(), 1200, 800);
 
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("pyramide2J.fxml"));
         pyramide2J = new Scene(fxmlLoader2.load(), 800, 800);
@@ -33,7 +34,7 @@ public class Main extends Application {
         pyramide4J = new Scene(fxmlLoader4.load(), 800, 800);
 
         stage.setTitle("Teotihuacan");
-        stage.setScene(scene);
+        stage.setScene(menu);
         stage.show();
 
         // Tests

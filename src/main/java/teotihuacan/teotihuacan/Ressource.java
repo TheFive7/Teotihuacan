@@ -3,8 +3,6 @@ package teotihuacan.teotihuacan;
 public abstract class Ressource {
     protected String type;
 
-    public Ressource(){}
-
     @Override
     public String toString() {
         return type;
