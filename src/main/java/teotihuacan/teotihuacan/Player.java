@@ -6,7 +6,8 @@ import java.util.Random;
 
 public class Player {
     public static List<Player> players = new ArrayList<>();
-    public static int nbPlayer;
+    static int nbPlayer;
+    static Player currentPlayer;
 
     private int numero;
     private String color;
@@ -15,6 +16,32 @@ public class Player {
     public Player(int numero, String color){
         setNumero(numero);
         setColor(color);
+    }
+
+    /**
+     * Renvoie le joueur correspondant au numéro cherché.
+     * @param nbPlayer : Numéro du joueur à chercher.
+     * @return : Le joueur recherché.
+     */
+    public static Player searchPlayerByNumber(int nbPlayer){
+        Player p = null;
+        for (Player player : players){
+            if (player.getNumero() == nbPlayer) p = player;
+        }
+        return p;
+    }
+
+    /**
+     * Compte le nombre de ressources du joueur.
+     * @param type : Type de la ressource à compter.
+     * @return : Le nombre de ressources.
+     */
+    public int countRessource(String type){
+        int compteur = 0;
+        for (Ressource r : ressources){
+            if (r.type.equals(type)) compteur++;
+        }
+        return compteur;
     }
 
     /**
@@ -29,7 +56,7 @@ public class Player {
             if (i == nbPlayer - 1) players.add(new Player(0,"RED"));
         }
         createOrder();
-        // printPlayer();
+        currentPlayer = players.get(0);
     }
 
     /**
@@ -48,9 +75,6 @@ public class Player {
      */
     public static void attribuerRessourcesDepart(){
         for (Player player : players){
-            player.ajouterRessource("pion", 12);
-            player.ajouterRessource("plateau", 1);
-            player.ajouterRessource("ouvrier", 4);
             switch (player.getNumero()) {
                 case 1 -> {
                     player.ajouterRessource("cacao", 5);
@@ -94,15 +118,6 @@ public class Player {
                 break;
             case "cacao":
                 for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
-                break;
-            case "pion":
-                for (int i = 0; i < nbRessource; i++){getRessources().add(new Pion());}
-                break;
-            case "plateau":
-                for (int i = 0; i < nbRessource; i++){getRessources().add(new Plateau());}
-                break;
-            case "ouvrier":
-                for (int i = 0; i < nbRessource; i++){getRessources().add(new Ouvrier());}
                 break;
         }
     }

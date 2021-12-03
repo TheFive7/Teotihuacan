@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@show_ressources.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelCacaoNumber" layoutX="65.0" layoutY="68.0" text="x 5">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="labelGoldNumber" layoutX="65.0" layoutY="100.0" text="x 4">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="labelWoodNumber" layoutX="65.0" layoutY="130.0" text="x 1">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="labelRockNumber" layoutX="65.0" layoutY="160.0" text="x 2">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="labelCurrentPlayer" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="15.0" text="Joueur 1" textAlignment="CENTER">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="13.0" />
+               </font></Label>
+         </children></Pane>
+      <Button layoutX="150.0" layoutY="25.0" mnemonicParsing="false" onAction="#nextPlayer" text="+" />
+      <Button layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onAction="#prevPlayer" text="-" />
+   </children>
+</AnchorPane>
