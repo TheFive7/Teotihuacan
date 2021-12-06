@@ -12,6 +12,7 @@ public class Main extends Application {
     static Scene gameView;
     static Scene pyramide;
     static Scene carte6;
+    static Scene pisteDesMorts;
 
 
     @Override
@@ -29,6 +30,11 @@ public class Main extends Application {
 
         FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("carte6.fxml"));
         carte6 = new Scene(fxmlLoader3.load(), 800, 400);
+
+        FXMLLoader fxmlLoader4 = new FXMLLoader(Main.class.getResource("pisteDesMorts.fxml"));
+        pisteDesMorts = new Scene(fxmlLoader4.load(), 800, 400);
+
+
 
         stage.setTitle("Teotihuacan");
         stage.setScene(menu);

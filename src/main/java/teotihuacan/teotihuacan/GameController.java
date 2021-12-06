@@ -55,6 +55,11 @@ public class GameController {
     //Affiche la carte 9
     public void carte6View() { primaryStage.setScene(carte6);}
 
+    // Affiche la piste des morts
+    public void pisteDesMortsView(){
+        primaryStage.setScene(pisteDesMorts);
+    }
+
     //affiche l'étage suivant
     public void nextStage(){
         if (numEtage == 1) {numEtage = 4;} else {numEtage --;}
