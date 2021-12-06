@@ -95,6 +95,6 @@
             <Insets left="5.0" />
          </padding>
       </HBox>
-      <Button layoutX="672.0" layoutY="192.0" mnemonicParsing="false" text="Retour" />
+      <Button layoutX="672.0" layoutY="192.0" mnemonicParsing="false" onAction="#quitter" text="Retour" />
    </children>
 </Pane>
