@@ -37,5 +37,10 @@
          </children></Pane>
       <Button layoutX="150.0" layoutY="25.0" mnemonicParsing="false" onAction="#nextPlayer" text="+" />
       <Button layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onAction="#prevPlayer" text="-" />
+      <Button layoutX="737.0" layoutY="126.0" mnemonicParsing="false" onAction="#pyramideView" text="Voir pyramide">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
