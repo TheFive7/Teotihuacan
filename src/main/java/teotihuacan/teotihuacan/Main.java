@@ -11,6 +11,8 @@ public class Main extends Application {
     static Stage primaryStage;
     static Scene gameView;
     static Scene pyramide;
+    static Scene carte9;
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,6 +26,9 @@ public class Main extends Application {
 
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("pyramide.fxml"));
         pyramide = new Scene(fxmlLoader2.load(), 1200, 800);
+
+        FXMLLoader fxmlLoader3 = new FXMLLoader(Main.class.getResource("carte9.fxml"));
+        carte9 = new Scene(fxmlLoader3.load(), 800, 400);
 
         stage.setTitle("Teotihuacan");
         stage.setScene(menu);
