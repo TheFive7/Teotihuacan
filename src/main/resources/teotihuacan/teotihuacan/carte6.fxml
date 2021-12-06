@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="276.0" fitWidth="594.0" layoutX="30.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../carte/carte9.png" />
+            <Image url="@carte9.png" />
          </image>
       </ImageView>
       <HBox fx:id="drop1" layoutX="394.0" layoutY="89.0" prefHeight="38.0" prefWidth="190.0" />
@@ -37,57 +37,57 @@
          <children>
             <ImageView fx:id="home1" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home2" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home3" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home4" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home5" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home6" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home7" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home8" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home9" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home10" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
             <ImageView fx:id="home11" fitHeight="40.0" fitWidth="40.0" layoutX="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../carte/maison.png" />
+                  <Image url="@maison.png" />
                </image>
             </ImageView>
          </children>
