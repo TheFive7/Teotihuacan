@@ -53,7 +53,7 @@ public class GameController {
     }
 
     //Affiche la carte 9
-    public void carte9View() { primaryStage.setScene(carte9);}
+    public void carte6View() { primaryStage.setScene(carte6);}
 
     //affiche l'étage suivant
     public void nextStage(){

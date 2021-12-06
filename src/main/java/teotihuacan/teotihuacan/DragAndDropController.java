@@ -9,7 +9,7 @@ import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DragAndDropController implements Initializable {
+public class DragAndDropController extends GameController implements Initializable {
     @FXML
     private ImageView home1;
 
