@@ -96,6 +96,7 @@ public class Player {
                     player.ajouterRessource("bois", 2);
                     player.ajouterRessource("or", 5);
                 }
+                default -> System.err.println("Numero de joueur inconnu.");
             }
         }
     }
@@ -118,6 +119,9 @@ public class Player {
                 break;
             case "cacao":
                 for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
+                break;
+            default :
+                System.err.println("Type inconnu");
                 break;
         }
     }
