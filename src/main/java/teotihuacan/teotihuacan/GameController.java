@@ -52,6 +52,9 @@ public class GameController {
         primaryStage.setScene(Main.pyramide);
     }
 
+    //Affiche la carte 9
+    public void carte6View() { primaryStage.setScene(carte6);}
+
     //affiche l'étage suivant
     public void nextStage(){
         if (numEtage == 1) {numEtage = 4;} else {numEtage --;}
@@ -83,7 +86,9 @@ public class GameController {
         }
     }
 
-    //permet de revenir au plateau principal
+    /**
+     * permet de revenir au plateau principal
+     */
     public void quitter(){
         primaryStage.setScene(Main.gameView);
     }
