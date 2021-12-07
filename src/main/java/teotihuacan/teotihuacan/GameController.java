@@ -85,7 +85,7 @@ public class GameController {
             grilleEtage.getChildren().clear(); //vide la grille avant d'afficher celle demandée pour ne pas avoir des éléments dupliqués
             numEtagePyramide.setText("Etage " + numEtage); //actualise le label indiquant le numéro de l'étage actuel
             Etage etage = pyramide.etages.get(numEtage-1); //récupère l'étage choisis dans la pyramide
-            Tuile[][] tuilesEtage = etage.tuilesEtage; //récupère la liste de tuiles de l'étage
+            Tuile[][] tuilesEtage = etage.tuilesEtage; // récupère la liste de tuiles de l'étage
             for (int x=0; x<numEtage; x++){
                 for (int y=0; y<numEtage; y++){
                     grilleEtage.add(tuilesEtage[x][y],x,y); //remplis la grille avec la liste de tuiles
