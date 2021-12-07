@@ -128,7 +128,7 @@ public class Player {
     }
 
     /**
-     * Enlève un nombre de la ressource voulue
+     * Enleve un nombre de la ressource voulue
      * @param type : Type de la ressource à enlever.
      * @param nbRessource : Nombre de ressources à enlever.
      */
