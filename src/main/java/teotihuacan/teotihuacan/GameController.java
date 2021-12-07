@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 
 import static teotihuacan.teotihuacan.Main.*;
 import static teotihuacan.teotihuacan.Player.*;
@@ -23,6 +24,8 @@ public class GameController {
     Label numEtagePyramide;
     @FXML
     GridPane grilleEtage;
+    @FXML
+    HBox listeBatiment;
 
     int num = 1;
     int numEtage = 4;

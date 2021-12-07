@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -54,5 +55,69 @@
       <Button layoutX="276.0" layoutY="134.0" mnemonicParsing="false" text="Case 2" />
       <Button layoutX="275.0" layoutY="388.0" mnemonicParsing="false" text="Case 3" />
       <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" onAction="#pisteDesMortsView" text="Piste des morts" />
+      <ImageView fitHeight="59.0" fitWidth="454.0" layoutX="536.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ligne_batiment.png" />
+         </image>
+      </ImageView>
+      <HBox fx:id="listeBatiment" layoutX="570.0" layoutY="490.0" prefHeight="53.0" prefWidth="421.0" spacing="3.0">
+         <children>
+            <ImageView fitHeight="46.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="45.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="115.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="150.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="185.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="255.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="290.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="325.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@maison.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

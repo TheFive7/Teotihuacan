@@ -150,9 +150,6 @@ public class DragAndDropController extends GameController implements Initializab
 
                     Point2D localPoint = targetBox.sceneToLocal(new Point2D(event.getSceneX(), event.getSceneY()));
 
-//                    System.out.println("event.getSceneX : "+event.getSceneX());
-//                    System.out.println("localPoint.getX : "+localPoint.getX());
-//                    System.out.println("********");
 
                     targetBox.getChildren().remove(iv);
 
@@ -162,19 +159,6 @@ public class DragAndDropController extends GameController implements Initializab
                     targetBox.getChildren().add(iv);
 
                     actualiser();
-               /* if(curseur < 400 && event.getSceneX() < 400){
-                    nombreLeft = nombreLeft+0;
-                }else if(curseur < 400 && event.getSceneX() > 400){
-                    nombreLeft--;
-                    nombreRight++;
-                    actualiser();
-                }else if(curseur > 400 && event.getSceneX() > 400){
-                    nombreRight = nombreRight +0;
-                }else if(curseur > 400 && event.getSceneX() < 400){
-                    nombreLeft++;
-                    nombreRight--;
-                    actualiser();
-                }*/
                     event.setDropCompleted(true);
                 }else{
                     event.setDropCompleted(false);
@@ -189,7 +173,9 @@ public class DragAndDropController extends GameController implements Initializab
 
     public void actualiser(){
         System.out.println(" + 1 maison et - 2 bois");
-        labelWoodNumber.setText(String.valueOf(nbWood));
+        currentPlayer.enleverRessources("bois", 2);
+        listeBatiment.getChildren().remove(0);
+        labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }
 
 }

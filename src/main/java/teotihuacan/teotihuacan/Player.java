@@ -122,6 +122,63 @@ public class Player {
         }
     }
 
+    /**
+     * Enlève un nombre de la ressource voulue
+     * @param type : Type de la ressource à enlever.
+     * @param nbRessource : Nombre de ressources à enlever.
+     */
+    public void enleverRessources(String type, int nbRessource){
+        int i = 0;
+        switch (type){
+            case "or":
+                int nbCurrentOr = currentPlayer.countRessource("or");
+                if(nbCurrentOr >= nbRessource){
+                    for ( Ressource typeRessource : getRessources()){
+                        if(typeRessource instanceof Or && i < nbRessource ){
+                            getRessources().remove(typeRessource);
+                            i++;
+                        }
+                    }
+                }
+
+                break;
+            case "pierre":
+                int nbCurrentPierre = currentPlayer.countRessource("pierre");
+                if(nbCurrentPierre >= nbRessource){
+                    for ( Ressource typeRessource : getRessources()){
+                        if(typeRessource instanceof Pierre && i < nbRessource ){
+                            getRessources().remove(typeRessource);
+                            i++;
+                        }
+                    }
+                }
+                break;
+            case "bois":
+                int nbCurrentBois = currentPlayer.countRessource("bois");
+                if(nbCurrentBois >= nbRessource){
+                    for ( Ressource typeRessource : getRessources()){
+                        if(typeRessource instanceof Bois && i < nbRessource ){
+                            getRessources().remove(typeRessource);
+                            i++;
+                        }
+                    }
+                }
+                break;
+            case "cacao":
+                int nbCurrentCacao = currentPlayer.countRessource("cacao");
+                if(nbCurrentCacao >= nbRessource){
+                    for ( Ressource typeRessource : getRessources()){
+                        if(typeRessource instanceof Cacao && i < nbRessource ){
+                            getRessources().remove(typeRessource);
+                            i++;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+
     public static void printPlayer(){
         for (Player player : players){
             player.print();
