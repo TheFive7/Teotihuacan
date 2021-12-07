@@ -131,7 +131,7 @@ public class Player {
      * @param type : Type de ressource à enlever.
      * @param nbRessource : Nombre de ressources à enlever.
      */
-    public void enleveRessource(String type, int nbRessource){
+    public void enleveRessourceModule(String type, int nbRessource){
         int i = 0;
         int nbCurrentOr = currentPlayer.countRessource(type);
         if(nbCurrentOr >= nbRessource){
@@ -151,10 +151,10 @@ public class Player {
      */
     public void enleverRessources(String type, int nbRessource){
         switch (type) {
-            case "or" -> enleveRessource(type, nbRessource);
-            case "pierre" -> enleveRessource(type, nbRessource);
-            case "bois" -> enleveRessource(type, nbRessource);
-            case "cacao" -> enleveRessource(type, nbRessource);
+            case "or" -> enleveRessourceModule("or", nbRessource);
+            case "pierre" -> enleveRessourceModule("pierre", nbRessource);
+            case "bois" -> enleveRessourceModule("bois", nbRessource);
+            case "cacao" -> enleveRessourceModule("cacao", nbRessource);
             default -> System.err.println("Type inconnu");
         }
     }
