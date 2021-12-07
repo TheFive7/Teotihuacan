@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 import static teotihuacan.teotihuacan.Player.currentPlayer;
 
-public class DragAndDropController extends GameController implements Initializable {
+public class DragAndDropController extends GameController {
     @FXML
     private ImageView home1;
 
@@ -64,18 +64,7 @@ public class DragAndDropController extends GameController implements Initializab
 
     int nbWood;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        for(Node children : dragElement.getChildren()){
-            setupGestureSource((ImageView) children);
-        }
-
-        setupGestureTarget(drop1,5);
-        setupGestureTarget(drop2,4);
-        setupGestureTarget(drop3,3);
-
-    }
 
     @Override
     public void quitter() {
