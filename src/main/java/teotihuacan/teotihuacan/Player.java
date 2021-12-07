@@ -1,6 +1,7 @@
 package teotihuacan.teotihuacan;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -127,35 +128,24 @@ public class Player {
     }
 
     /**
-     * Enleve nbRessources de ressources.
-     * @param type : Type de ressource à enlever.
-     * @param nbRessource : Nombre de ressources à enlever.
-     */
-    public void enleveRessourceModule(String type, int nbRessource){
-        int i = 0;
-        int nbCurrentOr = currentPlayer.countRessource(type);
-        if(nbCurrentOr >= nbRessource){
-            for (Ressource ressource : getRessources()){
-                if(ressource.type.equals(type) && i < nbRessource ){
-                    getRessources().remove(ressource);
-                    i++;
-                }
-            }
-        }
-    }
-
-    /**
      * Enlève un nombre de la ressource voulue
      * @param type : Type de la ressource à enlever.
      * @param nbRessource : Nombre de ressources à enlever.
      */
     public void enleverRessources(String type, int nbRessource){
-        switch (type) {
-            case "or" -> enleveRessourceModule("or", nbRessource);
-            case "pierre" -> enleveRessourceModule("pierre", nbRessource);
-            case "bois" -> enleveRessourceModule("bois", nbRessource);
-            case "cacao" -> enleveRessourceModule("cacao", nbRessource);
-            default -> System.err.println("Type inconnu");
+        int nbCurrentRessource = countRessource(type);
+        if(nbCurrentRessource >= nbRessource){
+            int nbFinalRessource = nbCurrentRessource - nbRessource;
+            Iterator<Ressource> iterator = getRessources().iterator();
+            while (iterator.hasNext()){
+                Ressource ressource = iterator.next();
+                if(nbCurrentRessource > nbFinalRessource) {
+                    if (ressource.type.equals(type)) {
+                        iterator.remove();
+                        nbCurrentRessource = countRessource(type);
+                    }
+                }
+            }
         }
     }
 

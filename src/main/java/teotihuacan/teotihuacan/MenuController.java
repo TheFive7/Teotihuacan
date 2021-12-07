@@ -35,6 +35,8 @@ public class MenuController {
         createPlayer();
         attribuerRessourcesDepart();
         printPlayer();
+        searchPlayerByNumber(1).enleverRessources("or",2);
+        printPlayer();
 
         primaryStage.setScene(gameView);
     }
