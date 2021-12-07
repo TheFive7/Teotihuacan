@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
    <children>
       <Pane prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -53,71 +49,18 @@
       <Button layoutX="1015.0" layoutY="134.0" mnemonicParsing="false" text="Case 7" />
       <Button layoutX="593.0" layoutY="134.0" mnemonicParsing="false" text="Case 1" />
       <Button layoutX="276.0" layoutY="134.0" mnemonicParsing="false" text="Case 2" />
-      <Button layoutX="275.0" layoutY="388.0" mnemonicParsing="false" text="Case 3" />
-      <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" onAction="#pisteDesMortsView" text="Piste des morts" />
-      <ImageView fitHeight="59.0" fitWidth="454.0" layoutX="536.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ligne_batiment.png" />
-         </image>
-      </ImageView>
-      <HBox fx:id="listeBatiment" layoutX="570.0" layoutY="490.0" prefHeight="53.0" prefWidth="421.0" spacing="3.0">
+      <Button layoutX="275.0" layoutY="388.0" mnemonicParsing="false" onAction="#cartecacaoView" text="Case 3" />
+      <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" text="Piste des morts" />
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutY="200.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="46.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="45.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="115.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="150.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="185.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="255.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="290.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="325.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@maison.png" />
-               </image>
-            </ImageView>
+            <Label layoutX="19.0" layoutY="30.0" text="Nombres de jours avant eclipse :" />
+            <Label fx:id="nbJourEclipse" layoutX="70.0" layoutY="60.0" text="12">
+               <font>
+                  <Font size="55.0" />
+               </font>
+            </Label>
          </children>
-      </HBox>
+      </Pane>
    </children>
 </AnchorPane>
