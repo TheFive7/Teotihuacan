@@ -23,6 +23,8 @@ public class GameController {
     @FXML
     Label numEtagePyramide;
     @FXML
+    Label JourEclipse;
+    @FXML
     GridPane grilleEtage;
     @FXML
     HBox listeBatiment;
@@ -44,11 +46,13 @@ public class GameController {
     }
 
     public void afficherRessources(){
+
         labelCurrentPlayer.setText("Joueur " + num);
         labelCacaoNumber.setText("x " + currentPlayer.countRessource("cacao"));
         labelGoldNumber.setText("x " + currentPlayer.countRessource("or"));
         labelWoodNumber.setText("x " + currentPlayer.countRessource("bois"));
         labelRockNumber.setText("x " + currentPlayer.countRessource("pierre"));
+        JourEclipse.setText("12");
     }
 
     public void pyramideView() {
@@ -58,10 +62,10 @@ public class GameController {
     //Affiche la carte 9
     public void carte6View() { primaryStage.setScene(carte6);}
 
-    // Affiche la piste des morts
-    public void pisteDesMortsView(){
-        primaryStage.setScene(pisteDesMorts);
-    }
+    //Affiche la carte 3
+    public void cartecacaoView() { primaryStage.setScene(cartecacao);}
+
+
 
     //affiche l'étage suivant
     public void nextStage(){
