@@ -159,6 +159,7 @@ public class Player {
                 break;
             case "bois":
                 int nbCurrentBois = currentPlayer.countRessource("bois");
+                System.out.println("nb current bois : "+ nbCurrentBois + "    " + nbRessource);
                 if(nbCurrentBois >= nbRessource){
                     for ( Ressource typeRessource : getRessources()){
                         if(typeRessource instanceof Bois && i < nbRessource ){

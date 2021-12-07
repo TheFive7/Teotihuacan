@@ -143,6 +143,7 @@ public class DragAndDropController extends GameController implements Initializab
 
                 Dragboard db = event.getDragboard();
                 nbWood = currentPlayer.countRessource("bois");
+                System.out.println(" nb bois : " + nbWood);
                 if(db.hasImage() && targetBox.getChildren().size() < nbMaxImg && nbWood >= 2){
 
 
@@ -173,8 +174,8 @@ public class DragAndDropController extends GameController implements Initializab
 
     public void actualiser(){
         System.out.println(" + 1 maison et - 2 bois");
-        currentPlayer.enleverRessources("bois", 2);
         listeBatiment.getChildren().remove(0);
+        currentPlayer.enleverRessources("bois", 2);
         labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }
 
