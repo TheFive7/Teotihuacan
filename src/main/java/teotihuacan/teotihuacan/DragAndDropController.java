@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 import static teotihuacan.teotihuacan.Player.currentPlayer;
 
-public class DragAndDropController extends GameController {
+public class DragAndDropController extends GameController implements Initializable {
     @FXML
     private ImageView home1;
 
@@ -64,7 +64,18 @@ public class DragAndDropController extends GameController {
 
     int nbWood;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        for(Node children : dragElement.getChildren()){
+            setupGestureSource((ImageView) children);
+        }
+
+        setupGestureTarget(drop1,5);
+        setupGestureTarget(drop2,4);
+        setupGestureTarget(drop3,3);
+
+    }
 
     @Override
     public void quitter() {
@@ -163,7 +174,9 @@ public class DragAndDropController extends GameController {
 
     public void actualiser(){
         System.out.println(" + 1 maison et - 2 bois");
-        listeBatiment.getChildren().remove(0);
+        if(listeBatiment != null){
+            listeBatiment.getChildren().remove(0);
+        }
         currentPlayer.enleverRessources("bois", 2);
         labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }
