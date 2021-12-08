@@ -29,6 +29,7 @@ public class GameController {
     @FXML
     HBox listeBatiment;
 
+
     int num = 1;
     int numEtage = 4;
     Pyramide pyramide = new Pyramide(4);

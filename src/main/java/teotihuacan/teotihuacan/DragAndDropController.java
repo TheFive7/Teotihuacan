@@ -176,6 +176,7 @@ public class DragAndDropController extends GameController implements Initializab
         System.out.println(" + 1 maison et - 2 bois");
         if(listeBatiment != null){
             listeBatiment.getChildren().remove(0);
+            System.out.println("j'aurai du enlever une image la");
         }
         currentPlayer.enleverRessources("bois", 2);
         if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
