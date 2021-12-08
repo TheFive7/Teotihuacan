@@ -72,8 +72,8 @@ public class DragAndDropController extends GameController implements Initializab
         }
 
         setupGestureTarget(drop1,5);
-        setupGestureTarget(drop2,4);
-        setupGestureTarget(drop3,3);
+        if(drop2 != null) setupGestureTarget(drop2,4);
+        if(drop3 != null)setupGestureTarget(drop3,3);
 
     }
 
@@ -178,7 +178,7 @@ public class DragAndDropController extends GameController implements Initializab
             listeBatiment.getChildren().remove(0);
         }
         currentPlayer.enleverRessources("bois", 2);
-        labelWoodNumber.setText("x " + String.valueOf(nbWood));
+        if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }
 
 }

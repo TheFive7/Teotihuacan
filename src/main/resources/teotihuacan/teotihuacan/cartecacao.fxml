@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.DragAndDropControllerCase3">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.DragAndDropController">
    <children>
       <ImageView fitHeight="252.0" fitWidth="504.0" layoutX="83.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@carte3.png" />
          </image></ImageView>
-      <HBox layoutX="151.0" layoutY="321.0" prefHeight="64.0" prefWidth="361.0">
+      <HBox fx:id="dragElement" layoutX="151.0" layoutY="321.0" prefHeight="64.0" prefWidth="361.0">
          <children>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,5 +41,6 @@
          </children>
       </HBox>
       <Button layoutX="672.0" layoutY="192.0" mnemonicParsing="false" onAction="#quitter" text="Retour" />
+      <HBox fx:id="drop1" layoutX="182.0" layoutY="26.0" prefHeight="100.0" prefWidth="200.0" />
    </children>
 </Pane>
