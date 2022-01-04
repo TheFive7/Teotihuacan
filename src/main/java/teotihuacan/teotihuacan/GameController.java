@@ -3,8 +3,10 @@ package teotihuacan.teotihuacan;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import static teotihuacan.teotihuacan.Main.*;
 import static teotihuacan.teotihuacan.Player.*;
@@ -28,16 +30,35 @@ public class GameController {
     GridPane grilleEtage;
     @FXML
     HBox listeBatiment;
-
+    @FXML
+    ImageView pionJaune;
+    @FXML
+    VBox pisteJaune;
 
     int num = 1;
     int numEtage = 4;
     Pyramide pyramide = new Pyramide(4);
 
+
     public void nextPlayer(){
         if (num == 4) {num = 1;} else {num ++;}
         currentPlayer = searchPlayerByNumber(num);
         afficherRessources();
+        if(listeBatiment != null){
+            int nbBat = listeBatiment.getChildren().size() - model.getNbBatiment();
+            if(nbBat == 1){
+                listeBatiment.getChildren().remove(0);
+            }
+        }
+        if(pionJaune != null){
+            System.out.println("pas nul");
+            pionJaune.setY(model.getMontePremierPlayer());
+        }
+        if(pisteJaune != null){
+            System.out.println("piste jaune pas null");
+        }
+
+
     }
 
     public void prevPlayer(){
@@ -53,7 +74,8 @@ public class GameController {
         labelGoldNumber.setText("x " + currentPlayer.countRessource("or"));
         labelWoodNumber.setText("x " + currentPlayer.countRessource("bois"));
         labelRockNumber.setText("x " + currentPlayer.countRessource("pierre"));
-        JourEclipse.setText("12");
+        //JourEclipse.setText("12");
+
     }
 
     public void pyramideView() {
@@ -65,6 +87,8 @@ public class GameController {
 
     //Affiche la carte 3
     public void cartecacaoView() { primaryStage.setScene(cartecacao);}
+
+    public void pisteDesMortsView() { primaryStage.setScene(pisteDesMorts);}
 
 
 
@@ -99,11 +123,15 @@ public class GameController {
         }
     }
 
+
+
+
     /**
      * permet de revenir au plateau principal
      */
     public void quitter(){
         primaryStage.setScene(Main.gameView);
+
     }
 
 }

@@ -13,11 +13,15 @@ public class Main extends Application {
     static Scene pyramide;
     static Scene carte6;
     static Scene cartecacao;
+    static Scene pisteDesMorts;
+    static Model model = new Model();
 
 
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
+
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
         Scene menu = new Scene(fxmlLoader.load(), 800, 800);
@@ -33,6 +37,11 @@ public class Main extends Application {
 
         FXMLLoader fxmlLoader4 = new FXMLLoader(Main.class.getResource("cartecacao.fxml"));
         cartecacao = new Scene(fxmlLoader4.load(), 800, 400);
+
+        FXMLLoader fxmlLoader5 = new FXMLLoader(Main.class.getResource("pisteDesMorts.fxml"));
+        pisteDesMorts = new Scene(fxmlLoader5.load(), 800, 400);
+
+
 
 
         stage.setTitle("Teotihuacan");

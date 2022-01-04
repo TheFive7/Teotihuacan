@@ -17,6 +17,9 @@ import java.util.ResourceBundle;
 import static teotihuacan.teotihuacan.Player.currentPlayer;
 
 public class DragAndDropController extends GameController implements Initializable {
+
+
+
     @FXML
     private ImageView home1;
 
@@ -67,6 +70,8 @@ public class DragAndDropController extends GameController implements Initializab
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
         for(Node children : dragElement.getChildren()){
             setupGestureSource((ImageView) children);
         }
@@ -77,10 +82,6 @@ public class DragAndDropController extends GameController implements Initializab
 
     }
 
-    @Override
-    public void quitter() {
-        super.quitter();
-    }
 
     int curseur = 0 ;
     ImageView iv;
@@ -172,14 +173,18 @@ public class DragAndDropController extends GameController implements Initializab
 
     }
 
+    public void quitter(){
+        super.quitter();
+
+    }
+
     public void actualiser(){
         System.out.println(" + 1 maison et - 2 bois");
-        if(listeBatiment != null){
-            listeBatiment.getChildren().remove(0);
-            System.out.println("j'aurai du enlever une image la");
-        }
         currentPlayer.enleverRessources("bois", 2);
-        if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
+        Main.model.enleveBatiment();
+        Main.model.setMontePremierPlayer();
+        //if(this.listeBatiment != null)this.listeBatiment.getChildren().remove(0);
+        //if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }
 
 }

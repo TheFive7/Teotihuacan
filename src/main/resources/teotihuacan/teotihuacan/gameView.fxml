@@ -54,7 +54,7 @@
       <Button layoutX="593.0" layoutY="134.0" mnemonicParsing="false" text="Case 1" />
       <Button layoutX="276.0" layoutY="134.0" mnemonicParsing="false" text="Case 2" />
       <Button layoutX="275.0" layoutY="388.0" mnemonicParsing="false" onAction="#cartecacaoView" text="Case 3" />
-      <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" text="Piste des morts" />
+      <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" onAction="#pisteDesMortsView" text="Piste des morts" />
       <Pane layoutY="200.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Label layoutX="19.0" layoutY="30.0" text="Nombres de jours avant eclipse :" />
