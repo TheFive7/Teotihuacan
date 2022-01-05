@@ -44,6 +44,10 @@ public class GameController {
         if (num == 4) {num = 1;} else {num ++;}
         currentPlayer = searchPlayerByNumber(num);
         afficherRessources();
+
+    }
+
+    public void actualiserFenetre(){
         if(listeBatiment != null){
             int nbBat = listeBatiment.getChildren().size() - model.getNbBatiment();
             if(nbBat == 1){
@@ -57,7 +61,7 @@ public class GameController {
         if(pisteJaune != null){
             System.out.println("piste jaune pas null");
         }
-
+        afficherRessources();
 
     }
 
@@ -83,7 +87,11 @@ public class GameController {
     }
 
     //Affiche la carte 9
-    public void carte6View() { primaryStage.setScene(carte6);}
+    public void carte6View() {
+
+        primaryStage.setScene(carte6);
+
+    }
 
     //Affiche la carte 3
     public void cartecacaoView() { primaryStage.setScene(cartecacao);}
