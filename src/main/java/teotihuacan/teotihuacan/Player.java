@@ -9,6 +9,7 @@ public class Player {
     public static List<Player> players = new ArrayList<>();
     static int nbPlayer;
     static Player currentPlayer;
+    public static Ouvrier[] ouvriers = new Ouvrier[4];
 
     private int numero;
     private String color;
@@ -188,4 +189,5 @@ public class Player {
     public List<Ressource> getRessources() {
         return ressources;
     }
+
 }

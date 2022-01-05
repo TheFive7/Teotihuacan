@@ -23,6 +23,16 @@ class Ouvrier extends Objet {
     public void setForce(int force) {
         this.force = force;
     }
+
+    public void augmenterForce(){
+        force +=1;
+    }
+
+    public void augmenterForceOuvriers(int[] index){
+        for (int i : index){
+            //ouvriers[i].augmenterForce();
+        }
+    }
 }
 
 class Plateau extends Objet {

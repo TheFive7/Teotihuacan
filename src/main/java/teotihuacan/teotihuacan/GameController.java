@@ -25,7 +25,7 @@ public class GameController {
     @FXML
     Label numEtagePyramide;
     @FXML
-    Label JourEclipse;
+    Label nbTours;
     @FXML
     GridPane grilleEtage;
     @FXML
@@ -44,6 +44,11 @@ public class GameController {
         if (num == 4) {num = 1;} else {num ++;}
         currentPlayer = searchPlayerByNumber(num);
         afficherRessources();
+        if (num == 1){
+            int entier = Integer.parseInt(nbTours.getText());
+            entier ++;
+            nbTours.setText(String.valueOf(entier));
+        }
 
     }
 
