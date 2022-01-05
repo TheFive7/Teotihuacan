@@ -61,6 +61,7 @@ public class GameController {
         if(pisteJaune != null){
             System.out.println("piste jaune pas null");
         }
+        afficherRessources();
 
     }
 
