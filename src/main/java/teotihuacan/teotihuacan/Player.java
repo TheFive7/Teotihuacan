@@ -1,6 +1,7 @@
 package teotihuacan.teotihuacan;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -96,6 +97,7 @@ public class Player {
                     player.ajouterRessource("bois", 2);
                     player.ajouterRessource("or", 5);
                 }
+                default -> System.err.println("Numero de joueur inconnu.");
             }
         }
     }
@@ -119,8 +121,34 @@ public class Player {
             case "cacao":
                 for (int i = 0; i < nbRessource; i++){getRessources().add(new Cacao());}
                 break;
+            default :
+                System.err.println("Type inconnu");
+                break;
         }
     }
+
+    /**
+     * Enleve un nombre de la ressource voulue
+     * @param type : Type de la ressource à enlever.
+     * @param nbRessource : Nombre de ressources à enlever.
+     */
+    public void enleverRessources(String type, int nbRessource){
+        int nbCurrentRessource = countRessource(type);
+        if(nbCurrentRessource >= nbRessource){
+            int nbFinalRessource = nbCurrentRessource - nbRessource;
+            Iterator<Ressource> iterator = getRessources().iterator();
+            while (iterator.hasNext()){
+                Ressource ressource = iterator.next();
+                if(nbCurrentRessource > nbFinalRessource) {
+                    if (ressource.type.equals(type)) {
+                        iterator.remove();
+                        nbCurrentRessource = countRessource(type);
+                    }
+                }
+            }
+        }
+    }
+
 
     public static void printPlayer(){
         for (Player player : players){
