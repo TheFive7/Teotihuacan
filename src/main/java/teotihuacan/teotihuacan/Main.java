@@ -11,7 +11,7 @@ public class Main extends Application {
     static Stage primaryStage;
     static Scene gameView;
     static Scene pyramide;
-    static Scene carte6;
+    static Scene carte6, carte5, carte8, carte4;
     static Scene cartecacao;
     static Scene pisteDesMorts;
     static Model model = new Model();
@@ -41,7 +41,14 @@ public class Main extends Application {
         FXMLLoader fxmlLoader5 = new FXMLLoader(Main.class.getResource("pisteDesMorts.fxml"));
         pisteDesMorts = new Scene(fxmlLoader5.load(), 800, 400);
 
+        FXMLLoader fxmlLoader6 = new FXMLLoader(Main.class.getResource("carte5.fxml"));
+        carte5 = new Scene(fxmlLoader6.load(), 800,400);
 
+        FXMLLoader fxmlLoader7 = new FXMLLoader(Main.class.getResource("carte4.fxml"));
+        carte4 = new Scene(fxmlLoader7.load(), 800, 400);
+
+        FXMLLoader fxmlLoader8 = new FXMLLoader(Main.class.getResource("carte8.fxml"));
+        carte8 = new Scene(fxmlLoader8.load(), 800,400);
 
 
         stage.setTitle("Teotihuacan");

@@ -47,9 +47,9 @@
          </font>
       </Button>
       <Button layoutX="275.0" layoutY="636.0" mnemonicParsing="false" onAction="#carte6View" text="Case 6" />
-      <Button layoutX="592.0" layoutY="636.0" mnemonicParsing="false" text="Case 8" />
-      <Button layoutX="1015.0" layoutY="636.0" mnemonicParsing="false" text="Case 4" />
-      <Button layoutX="1015.0" layoutY="388.0" mnemonicParsing="false" text="Case 5" />
+      <Button layoutX="592.0" layoutY="636.0" mnemonicParsing="false" onAction="#carte8View" text="Case 8" />
+      <Button layoutX="1015.0" layoutY="636.0" mnemonicParsing="false" onAction="#carte4View" text="Case 4" />
+      <Button layoutX="1015.0" layoutY="388.0" mnemonicParsing="false" onAction="#carte5View" text="Case 5" />
       <Button layoutX="1015.0" layoutY="134.0" mnemonicParsing="false" text="Case 7" />
       <Button layoutX="593.0" layoutY="134.0" mnemonicParsing="false" text="Case 1" />
       <Button layoutX="276.0" layoutY="134.0" mnemonicParsing="false" text="Case 2" />

@@ -93,10 +93,21 @@ public class GameController {
 
     //Affiche la carte 9
     public void carte6View() {
-
         primaryStage.setScene(carte6);
-
     }
+
+    public void carte4View(){
+        primaryStage.setScene(carte4);
+    }
+
+    public void carte5View(){
+        primaryStage.setScene(carte5);
+    }
+
+    public void carte8View(){
+        primaryStage.setScene(carte8);
+    }
+
 
     //Affiche la carte 3
     public void cartecacaoView() { primaryStage.setScene(cartecacao);}
