@@ -83,7 +83,6 @@ public class GameController {
         labelGoldNumber.setText("x " + currentPlayer.countRessource("or"));
         labelWoodNumber.setText("x " + currentPlayer.countRessource("bois"));
         labelRockNumber.setText("x " + currentPlayer.countRessource("pierre"));
-        //JourEclipse.setText("12");
 
     }
 
@@ -104,9 +103,7 @@ public class GameController {
         primaryStage.setScene(carte5);
     }
 
-    public void carte8View(){
-        primaryStage.setScene(carte8);
-    }
+    public void carte8View() { primaryStage.setScene(carte8); }
 
     public void carte1View(){
         primaryStage.setScene(carte1);
@@ -117,7 +114,6 @@ public class GameController {
     public void cartecacaoView() { primaryStage.setScene(cartecacao);}
 
     public void pisteDesMortsView() { primaryStage.setScene(pisteDesMorts);}
-
 
 
     //affiche l'étage suivant

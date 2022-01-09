@@ -24,10 +24,10 @@ public class Main extends Application {
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
-        Scene menu = new Scene(fxmlLoader.load(), 800, 800);
+        Scene menu = new Scene(fxmlLoader.load(), 1500, 800);
 
         FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("gameView.fxml"));
-        gameView = new Scene(fxmlLoader1.load(), 1200, 800);
+        gameView = new Scene(fxmlLoader1.load(), 1500, 800);
 
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("pyramide.fxml"));
         pyramide = new Scene(fxmlLoader2.load(), 1200, 800);
