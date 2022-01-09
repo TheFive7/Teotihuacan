@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane onMouseEntered="#actualiserFenetre" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
+<AnchorPane onMouseEntered="#actualiserFenetre" prefHeight="900.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
    <children>
       <Pane prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -37,20 +37,6 @@
          </children></Pane>
       <Button layoutX="150.0" layoutY="25.0" mnemonicParsing="false" onAction="#nextPlayer" text="+" />
       <Button layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onAction="#prevPlayer" text="-" />
-      <Button layoutX="703.0" layoutY="294.0" mnemonicParsing="false" onAction="#pyramideView" text="Voir pyramide">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="217.0" layoutY="586.0" mnemonicParsing="false" onAction="#carte6View" prefHeight="200.0" prefWidth="400.0" text="Case 6" />
-      <Button layoutX="650.0" layoutY="586.0" mnemonicParsing="false" onAction="#carte8View" prefHeight="200.0" prefWidth="400.0" text="Case 8" />
-      <Button layoutX="1080.0" layoutY="586.0" mnemonicParsing="false" onAction="#carte4View" prefHeight="200.0" prefWidth="400.0" text="Case 4" />
-      <Button layoutX="1080.0" layoutY="314.0" mnemonicParsing="false" onAction="#carte5View" prefHeight="200.0" prefWidth="400.0" text="Case 5" />
-      <Button layoutX="1080.0" layoutY="34.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="400.0" text="Case 7" />
-      <Button layoutX="650.0" layoutY="34.0" mnemonicParsing="false" onAction="#carte1View" prefHeight="200.0" prefWidth="400.0" text="Case 1" />
-      <Button layoutX="217.0" layoutY="34.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="400.0" text="Case 2" />
-      <Button layoutX="217.0" layoutY="313.0" mnemonicParsing="false" onAction="#cartecacaoView" prefHeight="200.0" prefWidth="400.0" text="Case 3" />
-      <Button layoutX="729.0" layoutY="388.0" mnemonicParsing="false" onAction="#pisteDesMortsView" text="Piste des morts" />
       <Pane layoutY="200.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Label layoutX="19.0" layoutY="30.0" prefHeight="35.0" prefWidth="152.0" text="Tour numéro :">
@@ -64,12 +50,12 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="56.0" fitWidth="470.0" layoutX="536.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="56.0" fitWidth="470.0" layoutX="687.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ligne_batiment.png" />
          </image>
       </ImageView>
-      <HBox fx:id="listeBatiment" layoutX="573.0" layoutY="497.0" prefHeight="48.0" prefWidth="436.0" spacing="3.0">
+      <HBox fx:id="listeBatiment" layoutX="733.0" layoutY="606.0" prefHeight="48.0" prefWidth="436.0" spacing="3.0">
          <children>
             <ImageView fitHeight="57.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -128,5 +114,61 @@
             </ImageView>
          </children>
       </HBox>
+      <ImageView fitHeight="200.0" fitWidth="437.0" layoutX="214.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="200.0" fitWidth="451.0" layoutX="719.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="439.0" layoutX="1228.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="200.0" fitWidth="451.0" layoutX="1227.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="451.0" layoutX="1224.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="437.0" layoutX="719.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="199.0" fitWidth="444.0" layoutX="214.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="437.0" layoutX="214.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="362.0" fitWidth="334.0" layoutX="673.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@centrePyramide.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="362.0" fitWidth="200.0" layoutX="1018.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pisteDesMorts.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="673.0" layoutY="228.0" mnemonicParsing="false" onAction="#pyramideView" opacity="0.0" prefHeight="362.0" prefWidth="331.0" text="Voir pyramide">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="214.0" layoutY="679.0" mnemonicParsing="false" onAction="#carte6View" opacity="0.0" prefHeight="200.0" prefWidth="437.0" text="Case 6" />
+      <Button layoutX="720.0" layoutY="679.0" mnemonicParsing="false" onAction="#carte8View" opacity="0.0" prefHeight="200.0" prefWidth="437.0" text="Case 8" />
+      <Button layoutX="1225.0" layoutY="679.0" mnemonicParsing="false" onAction="#carte4View" opacity="0.0" prefHeight="200.0" prefWidth="444.0" text="Case 4" />
+      <Button layoutX="1227.0" layoutY="350.0" mnemonicParsing="false" onAction="#carte5View" opacity="0.0" prefHeight="200.0" prefWidth="439.0" text="Case 5" />
+      <Button layoutX="1228.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="200.0" prefWidth="439.0" text="Case 7" />
+      <Button layoutX="720.0" layoutY="13.0" mnemonicParsing="false" onAction="#carte1View" opacity="0.0" prefHeight="200.0" prefWidth="437.0" text="Case 1" />
+      <Button layoutX="214.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="200.0" prefWidth="437.0" text="Case 2" />
+      <Button layoutX="214.0" layoutY="350.0" mnemonicParsing="false" onAction="#cartecacaoView" opacity="0.0" prefHeight="200.0" prefWidth="437.0" text="Case 3" />
+      <Button layoutX="1018.0" layoutY="228.0" mnemonicParsing="false" onAction="#pisteDesMortsView" opacity="0.0" prefHeight="362.0" prefWidth="193.0" text="Piste des morts" />
    </children>
 </AnchorPane>

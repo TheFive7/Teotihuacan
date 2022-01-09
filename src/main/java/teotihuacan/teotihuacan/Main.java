@@ -16,18 +16,15 @@ public class Main extends Application {
     static Scene pisteDesMorts;
     static Model model = new Model();
 
-
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
 
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
-        Scene menu = new Scene(fxmlLoader.load(), 1500, 800);
+        Scene menu = new Scene(fxmlLoader.load(), 1700, 900);
 
         FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("gameView.fxml"));
-        gameView = new Scene(fxmlLoader1.load(), 1500, 800);
+        gameView = new Scene(fxmlLoader1.load(), 1700, 900);
 
         FXMLLoader fxmlLoader2 = new FXMLLoader(Main.class.getResource("pyramide.fxml"));
         pyramide = new Scene(fxmlLoader2.load(), 1200, 800);
