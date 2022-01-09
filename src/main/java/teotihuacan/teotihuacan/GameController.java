@@ -37,6 +37,7 @@ public class GameController {
 
     int num = 1;
     int numEtage = 4;
+    //Boolean poserBatiment = true;
     Pyramide pyramide = new Pyramide(4);
 
 
@@ -48,7 +49,9 @@ public class GameController {
             int entier = Integer.parseInt(nbTours.getText());
             entier ++;
             nbTours.setText(String.valueOf(entier));
+            model.setNbTour(entier);
         }
+        model.setPoserBatiment(true);
 
     }
 

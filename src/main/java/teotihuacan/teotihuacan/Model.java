@@ -7,6 +7,8 @@ public class Model {
     public int playerVert = 0;
     public int playerBleu = 0;
     public int playerRouge = 0;
+    public int nbTour;
+    public Boolean poserBatiment = true;
 
     public int getNbBatiment() {
         return nbBatiment;
@@ -50,5 +52,21 @@ public class Model {
 
     public void setPlayerRouge() {
         this.playerRouge -= 25;
+    }
+
+    public int getNbTour() {
+        return nbTour;
+    }
+
+    public void setNbTour(int nbTour) {
+        this.nbTour = nbTour;
+    }
+
+    public Boolean getPoserBatiment() {
+        return poserBatiment;
+    }
+
+    public void setPoserBatiment(Boolean poserBatiment) {
+        this.poserBatiment = poserBatiment;
     }
 }

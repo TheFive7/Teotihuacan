@@ -145,8 +145,8 @@ public class DragAndDropController extends GameController implements Initializab
 
                 Dragboard db = event.getDragboard();
                 nbWood = currentPlayer.countRessource("bois");
-                System.out.println(" nb bois : " + nbWood);
-                if(db.hasImage() && targetBox.getChildren().size() < nbMaxImg && nbWood >= 2){
+                System.out.println(" nb bois : " + nbWood + " placer batiment " + model.getPoserBatiment());
+                if(db.hasImage() && targetBox.getChildren().size() < nbMaxImg && nbWood >= 2 && model.getPoserBatiment()){
 
 
                     iv.setImage(db.getImage());
@@ -183,22 +183,15 @@ public class DragAndDropController extends GameController implements Initializab
         System.out.println(" + 1 maison et - 2 bois");
         currentPlayer.enleverRessources("bois", 2);
         model.enleveBatiment();
-        switch (currentPlayer.getColor()){
-            case "YELLOW":
-                model.setPlayerJaune();
-                break;
-            case "BLUE":
-                model.setPlayerBleu();
-                break;
-            case "GREEN":
-                model.setPlayerVert();
-                break;
-            case "RED":
-                model.setPlayerRouge();
-
+        switch (currentPlayer.getColor()) {
+            case "YELLOW" -> model.setPlayerJaune();
+            case "BLUE" -> model.setPlayerBleu();
+            case "GREEN" -> model.setPlayerVert();
+            case "RED" -> model.setPlayerRouge();
+            default -> {
+            }
         }
-        //if(this.listeBatiment != null)this.listeBatiment.getChildren().remove(0);
-        //if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
+        model.setPoserBatiment(false);
     }
 
 }
