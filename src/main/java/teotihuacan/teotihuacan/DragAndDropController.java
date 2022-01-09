@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import static teotihuacan.teotihuacan.Main.*;
 
 import static teotihuacan.teotihuacan.Player.currentPlayer;
 
@@ -181,8 +182,21 @@ public class DragAndDropController extends GameController implements Initializab
     public void actualiser(){
         System.out.println(" + 1 maison et - 2 bois");
         currentPlayer.enleverRessources("bois", 2);
-        Main.model.enleveBatiment();
-        Main.model.setMontePremierPlayer();
+        model.enleveBatiment();
+        switch (currentPlayer.getColor()){
+            case "YELLOW":
+                model.setPlayerJaune();
+                break;
+            case "BLUE":
+                model.setPlayerBleu();
+                break;
+            case "GREEN":
+                model.setPlayerVert();
+                break;
+            case "RED":
+                model.setPlayerRouge();
+
+        }
         //if(this.listeBatiment != null)this.listeBatiment.getChildren().remove(0);
         //if(labelWoodNumber != null) labelWoodNumber.setText("x " + String.valueOf(nbWood));
     }

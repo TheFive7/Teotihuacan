@@ -4,9 +4,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.GameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#actualiserPiste" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teotihuacan.teotihuacan.pisteDesMortsController">
    <children>
       <ImageView fitHeight="330.0" fitWidth="177.0" layoutX="235.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -14,41 +13,25 @@
          </image>
       </ImageView>
       <Button layoutX="539.0" layoutY="188.0" mnemonicParsing="false" onAction="#quitter" text="Retour" />
-      <VBox fx:id="pisteVerte" layoutX="227.0" layoutY="41.0" prefHeight="330.0" prefWidth="48.0" rotate="180.0">
-         <children>
-            <ImageView fx:id="pionVert" fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-               <image>
-                  <Image url="@../../pion/pion_vert.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox fx:id="pisteBleu" layoutX="275.0" layoutY="41.0" prefHeight="330.0" prefWidth="41.0" rotate="180.0">
-         <children>
-            <ImageView fx:id="pionBleu" fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-               <image>
-                  <Image url="@../../pion/pion_bleu.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox fx:id="pisteJaune" layoutX="316.0" layoutY="41.0" prefHeight="330.0" prefWidth="41.0" rotate="180.0">
-         <children>
-            <ImageView fx:id="pionJaune" fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-               <image>
-                  <Image url="@../../pion/pion_jaune.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
-      <VBox fx:id="pisteRouge" layoutX="359.0" layoutY="41.0" prefHeight="330.0" prefWidth="41.0" rotate="180.0">
-         <children>
-            <ImageView fx:id="pionRouge" fitHeight="31.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-               <image>
-                  <Image url="@../../pion/pion_rouge.png" />
-               </image>
-            </ImageView>
-         </children>
-      </VBox>
+      <ImageView fx:id="pionRouge" fitHeight="31.0" fitWidth="32.0" layoutX="368.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../pion/pion_rouge.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pionJaune" fitHeight="31.0" fitWidth="32.0" layoutX="323.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../pion/pion_jaune.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pionBleu" fitHeight="31.0" fitWidth="32.0" layoutX="282.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../pion/pion_bleu.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pionVert" fitHeight="31.0" fitWidth="32.0" layoutX="235.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../pion/pion_vert.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

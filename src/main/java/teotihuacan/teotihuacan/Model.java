@@ -3,7 +3,10 @@ package teotihuacan.teotihuacan;
 public class Model {
 
     public int nbBatiment = 11;
-    public int montePremierPlayer = 0;
+    public int playerJaune = 0;
+    public int playerVert = 0;
+    public int playerBleu = 0;
+    public int playerRouge = 0;
 
     public int getNbBatiment() {
         return nbBatiment;
@@ -17,11 +20,35 @@ public class Model {
         this.nbBatiment--;
     }
 
-    public int getMontePremierPlayer() {
-        return montePremierPlayer;
+    public int getPlayerJaune() {
+        return playerJaune;
     }
 
-    public void setMontePremierPlayer() {
-        this.montePremierPlayer = montePremierPlayer+10;
+    public void setPlayerJaune() {
+        this.playerJaune -=25;
+    }
+
+    public int getPlayerVert() {
+        return playerVert;
+    }
+
+    public void setPlayerVert() {
+        this.playerVert -= 25;
+    }
+
+    public int getPlayerBleu() {
+        return playerBleu;
+    }
+
+    public void setPlayerBleu() {
+        this.playerBleu -= 25;
+    }
+
+    public int getPlayerRouge() {
+        return playerRouge;
+    }
+
+    public void setPlayerRouge() {
+        this.playerRouge -= 25;
     }
 }

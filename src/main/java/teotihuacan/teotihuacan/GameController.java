@@ -61,7 +61,7 @@ public class GameController {
         }
         if(pionJaune != null){
             System.out.println("pas nul");
-            pionJaune.setY(model.getMontePremierPlayer());
+            pionJaune.setY(model.getPlayerJaune());
         }
         if(pisteJaune != null){
             System.out.println("piste jaune pas null");
