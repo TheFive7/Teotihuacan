@@ -91,7 +91,7 @@ public class GameController {
         primaryStage.setScene(Main.pyramide);
     }
 
-    //Affiche la carte 9
+    //Affiche la carte 6
     public void carte6View() {
         primaryStage.setScene(carte6);
     }
@@ -106,6 +106,10 @@ public class GameController {
 
     public void carte8View(){
         primaryStage.setScene(carte8);
+    }
+
+    public void carte1View(){
+        primaryStage.setScene(carte1);
     }
 
 
