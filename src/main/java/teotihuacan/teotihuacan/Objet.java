@@ -10,7 +10,7 @@ public abstract class Objet {
 }
 
 class Ouvrier extends Objet {
-    private int force;
+    private int force = 1;
 
     public Ouvrier(){
         type = "ouvrier";

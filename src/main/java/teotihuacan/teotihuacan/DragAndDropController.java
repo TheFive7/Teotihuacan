@@ -9,50 +9,25 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import static teotihuacan.teotihuacan.Main.*;
 
 import static teotihuacan.teotihuacan.Player.currentPlayer;
+import static teotihuacan.teotihuacan.Player.printPlayer;
 
 public class DragAndDropController extends GameController implements Initializable {
 
-
-
     @FXML
-    private ImageView home1;
-
+    private GridPane ouvriersJoueurs;
     @FXML
-    private ImageView home10;
-
-    @FXML
-    private ImageView home11;
-
-    @FXML
-    private ImageView home2;
-
-    @FXML
-    private ImageView home3;
-
-    @FXML
-    private ImageView home4;
-
-    @FXML
-    private ImageView home5;
-
-    @FXML
-    private ImageView home6;
-
-    @FXML
-    private ImageView home7;
-
-    @FXML
-    private ImageView home8;
-
-    @FXML
-    private ImageView home9;
+    private GridPane gridOuvrier;
 
     @FXML
     private HBox dragElement;
@@ -77,9 +52,11 @@ public class DragAndDropController extends GameController implements Initializab
             setupGestureSource((ImageView) children);
         }
 
-        setupGestureTarget(drop1,5);
-        if(drop2 != null) setupGestureTarget(drop2,4);
-        if(drop3 != null)setupGestureTarget(drop3,3);
+        setupGestureTarget(5,null, drop1);
+        if(drop2 != null) setupGestureTarget(4, null, drop2);
+        if(drop3 != null)setupGestureTarget(3, null, drop3);
+
+
 
     }
 
@@ -122,8 +99,12 @@ public class DragAndDropController extends GameController implements Initializab
         });
     }
 
-    void setupGestureTarget(final HBox targetBox, int nbMaxImg){
-
+    void setupGestureTarget( int nbMaxImg, GridPane gridPane, HBox hbox){
+        Node targetBox;
+        if(gridPane != null && hbox == null){
+            targetBox = gridPane;
+        }
+        else targetBox = hbox;
 
         targetBox.setOnDragOver(new EventHandler <DragEvent>() {
             @Override
@@ -136,6 +117,8 @@ public class DragAndDropController extends GameController implements Initializab
                 }
 
                 event.consume();
+
+
             }
         });
 
@@ -145,24 +128,42 @@ public class DragAndDropController extends GameController implements Initializab
 
                 Dragboard db = event.getDragboard();
                 nbWood = currentPlayer.countRessource("bois");
-                System.out.println(" nb bois : " + nbWood + " placer batiment " + model.getPoserBatiment());
-                if(db.hasImage() && targetBox.getChildren().size() < nbMaxImg && nbWood >= 2 && model.getPoserBatiment()){
+                System.out.println(" nb bois : " + nbWood + " placer batiment " + model.getPoserBatiment() + " size = " + ((Pane) targetBox).getChildren().size() + " < "+  nbMaxImg + " size grid ouvrier = " +gridOuvrier.getChildren().size() + "height = "+ ((Pane) targetBox).getHeight());
+                if(db.hasImage() && ((Pane) targetBox).getChildren().size() < nbMaxImg ){
+                    if(((Pane) targetBox).getHeight() == 38 && nbWood >=2 && model.getPoserBatiment() && gridOuvrier.getChildren().size()>=1 || ((Pane) targetBox).getHeight() == 105){
+                        iv.setImage(db.getImage());
 
+                        Point2D localPoint = targetBox.sceneToLocal(new Point2D(event.getSceneX(), event.getSceneY()));
 
-                    iv.setImage(db.getImage());
+                        if(!targetBox.getId().equals("gridOuvrier")){
+                            ((Pane) targetBox).getChildren().remove(iv);
+                            System.out.println("pas grid ouvrier ça ");
+                        }
+                        
 
-                    Point2D localPoint = targetBox.sceneToLocal(new Point2D(event.getSceneX(), event.getSceneY()));
+                        iv.setX((int)(localPoint.getX() - iv.getBoundsInLocal().getWidth()  / 2)  );
+                        iv.setY((int)(localPoint.getY() - iv.getBoundsInLocal().getHeight() / 2) );
 
+                        if(!targetBox.getId().equals("gridOuvrier")) ((Pane) targetBox).getChildren().add(iv);
+                        else {
+                            gridOuvrier.add(iv, model.getNbOuvrierCase6(),0);
+                            model.addNbOuvrierCase6();
+                        }
 
-                    targetBox.getChildren().remove(iv);
+                        if(targetBox.getId().equals("drop1") || targetBox.getId().equals("drop2") || targetBox.getId().equals("drop3"))actualiser();
+                        if(targetBox.getId().equals("drop1")) {
+                            currentPlayer.ouvriers[0].augmenterForce();
+                            gridOuvrier.getChildren().remove(model.getNbOuvrierCase6()-1);
+                            ImageView img = new ImageView(new Image("file:src/main/resources/ouvriers/de_"+currentPlayer.getColor().toLowerCase() + "_"+currentPlayer.ouvriers[0].getForce() + ".png"));
+                            img.setFitHeight(50);
+                            img.setFitWidth(50);
+                            System.out.println(model.getNbOuvrierCase6());
+                            gridOuvrier.add(img, model.getNbOuvrierCase6()-1, 0);
+                            //model.addNbOuvrierCase6();
+                        }
+                        event.setDropCompleted(true);
+                    }
 
-                    iv.setX((int)(localPoint.getX() - iv.getBoundsInLocal().getWidth()  / 2)  );
-                    iv.setY((int)(localPoint.getY() - iv.getBoundsInLocal().getHeight() / 2) );
-
-                    targetBox.getChildren().add(iv);
-
-                    actualiser();
-                    event.setDropCompleted(true);
                 }else{
                     event.setDropCompleted(false);
                 }
@@ -173,6 +174,8 @@ public class DragAndDropController extends GameController implements Initializab
 
 
     }
+
+
 
     public void quitter(){
         super.quitter();
@@ -192,6 +195,35 @@ public class DragAndDropController extends GameController implements Initializab
             }
         }
         model.setPoserBatiment(false);
+    }
+
+    public void actualiserOuvrier(){
+        int col = 0, line = 0;
+        for(int i=0; i< currentPlayer.ouvriers.length; i++){
+            if(i==2){
+                col = 0;
+                line = 1;
+            }
+            String imgName = "de_"+currentPlayer.getColor().toLowerCase() + "_"+currentPlayer.ouvriers[i].getForce() + ".png";
+
+            Image imgv1 = new Image("file:src/main/resources/ouvriers/"+imgName);
+
+            ImageView img = new ImageView(imgv1);
+            img.setFitHeight(50);
+            img.setFitWidth(50);
+            setupGestureSource(img);
+            ouvriersJoueurs.add(img,col,line);
+
+            col++;
+        }
+
+        setupGestureTarget(4, ouvriersJoueurs, null);
+        setupGestureTarget(12, gridOuvrier, null);
+
+
+
+
+
     }
 
 }

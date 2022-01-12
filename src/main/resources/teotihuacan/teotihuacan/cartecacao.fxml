@@ -16,27 +16,27 @@
          <children>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_1.png" />
+                  <Image url="@../../ouvriers/de_red_1.png" />
                </image></ImageView>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_2.png" />
+                  <Image url="@../../ouvriers/de_red_2.png" />
                </image></ImageView>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_3.png" />
+                  <Image url="@../../ouvriers/de_red_3.png" />
                </image></ImageView>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_4.png" />
+                  <Image url="@../../ouvriers/de_red_4.png" />
                </image></ImageView>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_5.png" />
+                  <Image url="@../../ouvriers/de_red_5.png" />
                </image></ImageView>
             <ImageView fitHeight="64.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../ouvriers/de_rouge_6.png" />
+                  <Image url="@../../ouvriers/de_red_6.png" />
                </image></ImageView>
          </children>
       </HBox>

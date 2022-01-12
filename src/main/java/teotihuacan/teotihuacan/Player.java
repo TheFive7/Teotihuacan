@@ -9,8 +9,8 @@ public class Player {
     public static List<Player> players = new ArrayList<>();
     static int nbPlayer;
     static Player currentPlayer;
-    public static Ouvrier[] ouvriers = new Ouvrier[4];
-
+    public Ouvrier[] ouvriers;
+    static final int nbOuvrier = 4;
     private int numero;
     private String color;
     private List<Ressource> ressources = new ArrayList<>();
@@ -19,6 +19,11 @@ public class Player {
     public Player(int numero, String color){
         setNumero(numero);
         setColor(color);
+
+        ouvriers = new Ouvrier[nbOuvrier];
+        for(int i = 0; i< nbOuvrier; i++){
+            ouvriers[i] = new Ouvrier();
+        }
     }
 
     /**

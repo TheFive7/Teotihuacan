@@ -9,6 +9,7 @@ public class Model {
     public int playerRouge = 0;
     public int nbTour;
     public Boolean poserBatiment = true;
+    public int nbOuvrierCase6 = 0;
 
     public int getNbBatiment() {
         return nbBatiment;
@@ -68,5 +69,13 @@ public class Model {
 
     public void setPoserBatiment(Boolean poserBatiment) {
         this.poserBatiment = poserBatiment;
+    }
+
+    public int getNbOuvrierCase6() {
+        return nbOuvrierCase6;
+    }
+
+    public void addNbOuvrierCase6() {
+        this.nbOuvrierCase6 += 1;
     }
 }
