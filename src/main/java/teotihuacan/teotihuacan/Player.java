@@ -14,6 +14,7 @@ public class Player {
     private int numero;
     private String color;
     private List<Ressource> ressources = new ArrayList<>();
+    private Tuile tuile;
 
     public Player(int numero, String color){
         setNumero(numero);
@@ -58,6 +59,9 @@ public class Player {
             if (i == nbPlayer - 1) players.add(new Player(0,"RED"));
         }
         createOrder();
+        for (Player player: players) {
+            player.setTuile(new Tuile(true));
+        }
         currentPlayer = players.get(0);
     }
 
@@ -190,4 +194,11 @@ public class Player {
         return ressources;
     }
 
+    public Tuile getTuile() {
+        return tuile;
+    }
+
+    public void setTuile(Tuile tuile) {
+        this.tuile = tuile;
+    }
 }

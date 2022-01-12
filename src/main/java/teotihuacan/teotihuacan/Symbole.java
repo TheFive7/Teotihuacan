@@ -64,4 +64,12 @@ public class Symbole extends Pane {
     }
 
     public String getColor() {return color;}
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

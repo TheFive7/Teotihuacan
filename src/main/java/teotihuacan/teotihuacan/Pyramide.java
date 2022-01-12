@@ -19,21 +19,6 @@ public class Pyramide {
             etages.add(new Etage(noEtage));
         }
     }
-//    public void choixConfiguration(int nbJoueurs){
-//        switch (nbJoueurs){
-//            case 2 :
-//                System.out.println("plateau de 2 joueurs");
-//                break;
-//            case 3 :
-//                System.out.println("plateau de 3 joueurs");
-//                break;
-//            case 4 :
-//                System.out.println("plateau de 4 joueurs");
-//                // configuration pour 4 joueurs
-//                break;
-//        }
-//
-//    }
 }
 
 class Etage extends GridPane {
@@ -51,27 +36,9 @@ class Etage extends GridPane {
             tuilesEtage[2][3] = new Tuile(true);
             tuilesEtage[3][1] = new Tuile(true);
             tuilesEtage[3][2] = new Tuile(true);
-
-            for (int x=0; x<noEtage; x++){
-                for (int y=0; y<noEtage; y++){
-                    if(tuilesEtage[x][y] == null){
-                        tuilesEtage[x][y] = new Tuile(false);
-                        add(tuilesEtage[x][y],x,y);
-                    }
-                }
-            }
-        }
-        else {
-            for (int x=0; x<noEtage; x++){
-                for (int y=0; y<noEtage; y++){
-                    tuilesEtage[x][y] = new Tuile(false);
-                    add(tuilesEtage[x][y],x,y);
-                }
-            }
         }
 
         //Setting the padding
-        //setPadding(new Insets(20, 20, 20, 20));
         setGridLinesVisible(true);
 
         setVgap(10);
@@ -80,26 +47,53 @@ class Etage extends GridPane {
         //Setting the Grid alignment
         setAlignment(Pos.CENTER);
     }
-}
 
+    public void placerTuile(Pyramide pyramide, int x, int y, Player currentPlayer){
+        Etage etageVerif = pyramide.etages.get(tuilesEtage.length-1);
+        if(pyramide.etages.get(tuilesEtage.length-1).tuilesEtage.length !=4 ) etageVerif = pyramide.etages.get(tuilesEtage.length);
+        if(tuilesEtage.length==4){
+            tuilesEtage[x][y] = currentPlayer.getTuile();
+            currentPlayer.setTuile(null);
+        }
+        else{
+            System.out.println("looking at the stage -> " + etageVerif.tuilesEtage.length);
+            if (verifPosition(etageVerif, x, y)) {
+                tuilesEtage[x][y] = currentPlayer.getTuile();
+                currentPlayer.setTuile(null);
+            }
+            else System.out.println("There are not 4 stones under this position. You can't place it here");
+        }
+    }
+
+    public boolean verifPosition(Etage etage, int x, int y){
+        Tuile tuile1 = etage.tuilesEtage[x][y];
+        Tuile tuile2 = etage.tuilesEtage[x+1][y];
+        Tuile tuile3 = etage.tuilesEtage[x][y+1];
+        Tuile tuile4 = etage.tuilesEtage[x+1][y+1];
+        return (tuile1!=null && tuile2!=null && tuile3!=null && tuile4!=null);
+    }
+}
 
 /**
  * Une tuile est constituée de 4 symboles
  */
 class Tuile extends GridPane {
 
+    Symbole[][] symboles;
+    boolean activated;
+
     public Tuile(boolean activated){
+
+        this.activated = activated;
 
         ColumnConstraints column = new ColumnConstraints(40);
         getColumnConstraints().add(column);
-
 
         //Setting the Grid alignment
         setAlignment(Pos.CENTER);
 
         int tailleTuile = 2;
-        Symbole[][] tuile = new Symbole[tailleTuile][tailleTuile];
-
+        symboles = new Symbole[tailleTuile][tailleTuile];
 
         // random utilisé pour la valeur d'un symbole
         Random rand = new Random();
@@ -109,13 +103,17 @@ class Tuile extends GridPane {
                 // Si la tuile contient bien des symboles
                 if (activated){
                     int n = rand.nextInt(4);
-                    tuile[x][y] = new Symbole(n);
+                    symboles[x][y] = new Symbole(n);
                     // si la tuile ne contient pas de symboles
                 } else {
-                    tuile[x][y] = new Symbole(5);
+                    symboles[x][y] = new Symbole(5);
                 }
-                add(tuile[x][y], x, y);
+                add(symboles[x][y], x, y);
             }
         }
+    }
+
+    public boolean isActivated() {
+        return activated;
     }
 }

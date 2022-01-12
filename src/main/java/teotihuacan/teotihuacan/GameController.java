@@ -1,7 +1,9 @@
 package teotihuacan.teotihuacan;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -25,9 +27,13 @@ public class GameController {
     @FXML
     Label numEtagePyramide;
     @FXML
+    Label msg;
+    @FXML
     Label nbTours;
     @FXML
     GridPane grilleEtage;
+    @FXML
+    GridPane tuilePlayer;
     @FXML
     HBox listeBatiment;
     @FXML
@@ -137,21 +143,40 @@ public class GameController {
         grilleEtage.setAlignment(Pos.CENTER);
         grilleEtage.setHgap(10); grilleEtage.setVgap(10);
 
+        if(currentPlayer.getTuile()!=null && tuilePlayer!=null){
+            tuilePlayer.getChildren().clear();
+            tuilePlayer.add(currentPlayer.getTuile(),0,0);
+        }
+
+        if(currentPlayer.getTuile()!=null) {
+            msg.setText("Vous avez une tuile à placer");
+        }
+        else msg.setText("Vous n'avez pas de tuile à placer");
+
         if(grilleEtage != null) {
             grilleEtage.getChildren().clear(); //vide la grille avant d'afficher celle demandée pour ne pas avoir des éléments dupliqués
             numEtagePyramide.setText("Etage " + numEtage); //actualise le label indiquant le numéro de l'étage actuel
             Etage etage = pyramide.etages.get(numEtage-1); //récupère l'étage choisis dans la pyramide
             Tuile[][] tuilesEtage = etage.tuilesEtage; // récupère la liste de tuiles de l'étage
-            for (int x=0; x<numEtage; x++){
-                for (int y=0; y<numEtage; y++){
-                    grilleEtage.add(tuilesEtage[x][y],x,y); //remplis la grille avec la liste de tuiles
+            for (int x = 0; x<numEtage; x++){
+                for (int y = 0; y<numEtage; y++){
+                    // définition d'abscisse et ordonnée final pour le setOnAction du bouton
+                    final int abs = x; final int ord = y;
+                    Button button = new Button("placer tuile"); button.setPrefSize(100.0,100.0);
+                    button.setOnAction(e -> clicBouton(etage,abs,ord));
+                    if (tuilesEtage[x][y]==null || !tuilesEtage[x][y].isActivated()) grilleEtage.add(button,x,y); //complete the grid with buttons
+                    else grilleEtage.add(tuilesEtage[x][y],x,y);
                 }
             }
         }
     }
 
-
-
+    public void clicBouton(Etage etage, final int abs, final int ord) {
+        if(currentPlayer.getTuile()!=null) {
+            etage.placerTuile(pyramide, abs, ord, currentPlayer);
+            afficherEtage();
+        }
+    }
 
     /**
      * permet de revenir au plateau principal
@@ -160,5 +185,4 @@ public class GameController {
         primaryStage.setScene(Main.gameView);
 
     }
-
 }

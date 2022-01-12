@@ -12,7 +12,7 @@
                     <children>
                         <Button layoutX="57.0" layoutY="244.0" mnemonicParsing="false" onAction="#nextStage" text="Etage suivant" />
                         <Button layoutX="49.0" layoutY="390.0" mnemonicParsing="false" onAction="#prevStage" text="Etage précédent" />
-                        <Label fx:id="numEtagePyramide" layoutX="50.0" layoutY="57.0"  prefHeight="30.0" prefWidth="126.0" text="  Etage n°4" textAlignment="CENTER">
+                        <Label fx:id="numEtagePyramide" layoutX="50.0" layoutY="57.0" prefHeight="30.0" prefWidth="126.0" text="  Etage n°4" textAlignment="CENTER">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -22,9 +22,17 @@
                 </AnchorPane>
                 <AnchorPane minHeight="700.0" minWidth="712.0" prefHeight="701.0" prefWidth="712.0">
                     <children>
-                        <GridPane fx:id="grilleEtage" alignment="CENTER" prefHeight="700.0" prefWidth="700.0">
+                  <GridPane fx:id="tuilePlayer" layoutX="453.0" layoutY="629.0" prefHeight="178.0" prefWidth="230.0">
+
+                  </GridPane>
+                        <GridPane fx:id="grilleEtage" alignment="CENTER" prefHeight="619.0" prefWidth="684.0">
 
                         </GridPane>
+                        <Label fx:id="msg" layoutX="15.0" layoutY="689.0" prefHeight="46.0" prefWidth="318.0" textAlignment="CENTER">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
                     </children></AnchorPane>
             </items>
         </SplitPane>
