@@ -114,13 +114,11 @@
             </ImageView>
          </children>
       </HBox>
-      <ImageView fitHeight="200.0" fitWidth="437.0" layoutX="214.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="200.0" fitWidth="451.0" layoutX="719.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@carte1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="439.0" layoutX="1228.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="200.0" fitWidth="451.0" layoutX="1227.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@carte5.png" />
@@ -154,6 +152,16 @@
       <ImageView fitHeight="362.0" fitWidth="200.0" layoutX="1018.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pisteDesMorts.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="439.0" layoutX="1228.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte7.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="437.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte2.png" />
          </image>
       </ImageView>
       <Button layoutX="673.0" layoutY="228.0" mnemonicParsing="false" onAction="#pyramideView" opacity="0.0" prefHeight="362.0" prefWidth="331.0" text="Voir pyramide">
